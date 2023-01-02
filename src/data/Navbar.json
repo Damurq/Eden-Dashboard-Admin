@@ -1,0 +1,29 @@
+{
+    "logo": "Eden.png",
+    "elements": [
+        {
+            "name": "Usuarios",
+            "type": "Link",
+            "icon": "database",
+            "href": "/"
+        },
+        {
+            "name": "Eventos",
+            "type": "Link",
+            "icon": "education",
+            "href": "/Eventos"
+        },
+        {
+            "name": "Club",
+            "type": "Link",
+            "icon": "work",
+            "href": "/Torneos"
+        },
+        {
+            "name": "Deporte",
+            "type": "Link",
+            "icon": "frontend",
+            "href": "/Sobre-nosotros"
+        }
+    ]
+}
