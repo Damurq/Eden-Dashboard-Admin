@@ -2,13 +2,19 @@
     "logo": "Eden.png",
     "elements": [
         {
+            "name": "Inicio",
+            "type": "Link",
+            "icon": "database",
+            "href": "/"
+        },
+        {
             "name": "Usuarios",
             "type": "Link",
             "icon": "database",
             "href": "/"
         },
         {
-            "name": "Eventos",
+            "name": "Eventos y Actividades",
             "type": "Link",
             "icon": "education",
             "href": "/Eventos"
@@ -20,7 +26,19 @@
             "href": "/Torneos"
         },
         {
-            "name": "Deporte",
+            "name": "Bolas criollas",
+            "type": "Link",
+            "icon": "frontend",
+            "href": "/Sobre-nosotros"
+        },
+        {
+            "name": "Dominó",
+            "type": "Link",
+            "icon": "frontend",
+            "href": "/Sobre-nosotros"
+        },
+        {
+            "name": "Jugadores",
             "type": "Link",
             "icon": "frontend",
             "href": "/Sobre-nosotros"

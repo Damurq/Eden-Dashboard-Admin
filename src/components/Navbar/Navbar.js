@@ -1,19 +1,23 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { Link } from "react-router-dom"
 
 import IconsComponent from '../IconsComponent/IconsComponent'
+import logo_dark_IMG_small from '../../assets/images/logo_dark_IMG_small.png'
+import isotipo from '../../assets/images/isotipo.png'
 
 import './Navbar.css'
 
-export const Navbar = ({ data }) => {
+const Navbar = ({ data }) => {
+
+    const [activeMenu, setActiveMenu] = useState(false)
     return (
-        <div className='navegation' onClick={(e) => { e.currentTarget.classList.toggle('active') }}>
+        <div className='navegation' onClick={(e) => { 
+            setActiveMenu(!e.currentTarget.classList.contains('active'))
+            e.currentTarget.classList.toggle('active') 
+            }}>
             <ul>
                 <li>
-                    <a href="">
-                        <span className="icon">a</span>
-                        <span className="title">Home</span>
-                    </a>
+                    <img src={activeMenu ? logo_dark_IMG_small : isotipo} alt="eden-logo" />
                 </li>
                 {data.elements && data.elements.map((section, index) => {
                     return (section.type === "Link" ?
@@ -34,3 +38,4 @@ export const Navbar = ({ data }) => {
         </div>
     )
 }
+export default Navbar

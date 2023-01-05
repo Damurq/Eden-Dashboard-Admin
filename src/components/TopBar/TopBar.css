@@ -1,0 +1,7 @@
+.top-bar{
+    display: flex;
+    justify-content: space-around;
+    height: 3rem;
+    width: 100%;
+}
+

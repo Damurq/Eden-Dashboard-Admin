@@ -6,30 +6,30 @@
 
 body{
     min-height: 100vh;
-    background: #365fa1;
 }
 
 .navegation{
-    position: fixed;
-    inset: 20px;
-    background: #287bff;
+    position: sticky;
+    inset: 0px;
+    background: linear-gradient(180deg, #132D46 5.21%, #016F6C 100%);
     width: 80px;
-    border-left: 10px solid #287bff;
-    border-radius: 50px;
+    border-left: 10px solid #016f6b00;
+    /* border-radius: 50px; */
     overflow: hidden;
     box-shadow: 15px 15px 25px rgba(0,0,0,0.05);
     transition: 0.5s;
+    min-height: 100vh;
 }
 
 .navegation.active{
     width: 300px;
-    border-radius: 20px;
 }
 
 .toggle{
-    position: absolute;
-    bottom: 15px;
-    right: 15px;
+    margin-bottom: 15px;
+    margin-right: 15px;
+    margin-top: 15px;
+    margin-left: auto;
     width: 50px;
     height: 50px;
     background: #fff;
@@ -72,7 +72,6 @@ body{
 }
 
 .navegation ul{
-    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
@@ -94,6 +93,20 @@ body{
     top: 20px;
     margin-bottom: 40px;
     background: none;
+    display: flex;
+    justify-content: center;
+}
+
+.navegation.active ul li:nth-child(1){
+    padding-left: 1.5rem;
+    display: list-item;
+}
+
+.navegation ul li:nth-child(1) img{
+    padding-top: 1.5rem;
+    width: 100%;
+    max-width: max-content;
+    margin: auto;
 }
 
 .navegation ul li:not(:first-child):hover::before{

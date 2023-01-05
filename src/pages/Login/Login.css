@@ -1,0 +1,27 @@
+.login-page{
+    display: flex;
+    background: linear-gradient(180deg, #152C43 11.46%, #016F6C 100%);
+}
+
+.login-page-left{
+    width: 60%;
+
+}
+.login-page-right{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 40%;
+}
+
+.login-page__front{
+    object-fit: cover;
+    height: 100vh;
+    width: 100%;
+}
+
+.login-page__logo {
+    position: absolute;
+    bottom: 0
+}
