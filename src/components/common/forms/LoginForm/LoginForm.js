@@ -16,21 +16,21 @@ const LoginForm = () => {
             </div>
             <p className="login-form__description-text">Ingresa tu usuario y contraseña para entrar a tu perfil</p>
             <Formik
-                initialValues={{ email: '', project: '', name: '' }}
+                initialValues={{ password: '', project: '', user: '' }}
                 validate={values => {
                     const errors = {};
-                    if (!values.email) {
-                        errors.email = 'Requerido'
+                    if (!values.password) {
+                        errors.password = 'Requerido'
                     } else if (
-                        !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
+                        !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.password)
                     ) {
-                        errors.email = 'Email invalido'
+                        errors.password = 'Email invalido'
                     }
                     if (!values.project) {
                         errors.project = 'Requerido'
                     }
-                    if (!values.name) {
-                        errors.name = 'Requerido'
+                    if (!values.user) {
+                        errors.user = 'Requerido'
                     }
 
                     return errors;
@@ -49,31 +49,33 @@ const LoginForm = () => {
                     isSubmitting,
                     /* and other goodies */
                 }) => (
-                    <form onSubmit={handleSubmit} className="contact__form grid">
-                        <div className="contact__inputs grid">
-                            <div className="contact__content theme--3">
-                                <label htmlFor="name" className="contact__label">Nombre</label>
+                    <form onSubmit={handleSubmit} className="contact-form">
+                        <div className="contact-inputs grid">
+                            <div className="input-box">
                                 <input
+                                    required
                                     onChange={handleChange}
                                     onBlur={handleBlur}
-                                    value={values.name}
+                                    value={values.user}
                                     type="text"
-                                    className="contact__input theme--3" id='name' />
+                                    className="contact__input" id='name' />
+                                <label htmlFor="name" className="contact__label">Usuario</label>
                                 <p className="error">
-                                    {errors.name && touched.name && errors.name}
+                                    {errors.user && touched.user && errors.user}
                                 </p>
                             </div>
-                            <div className="contact__content theme--3">
-                                <label htmlFor="email" className="contact__label">Email</label>
+                            <div className="input-box">
                                 <input
                                     id="email"
                                     onChange={handleChange}
                                     onBlur={handleBlur}
-                                    value={values.email}
-                                    type="email"
-                                    className="contact__input theme--3" />
+                                    value={values.password}
+                                    type="password"
+                                    required
+                                    className="contact__input" />
+                                <label htmlFor="email" className="contact__label">Contraseña</label>
                                 <p className="error">
-                                    {errors.email && touched.email && errors.email}
+                                    {errors.password && touched.password && errors.password}
                                 </p>
                             </div>
                             <div className='container-button--contact'>

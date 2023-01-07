@@ -12,8 +12,7 @@ const Login = () => {
       <div className="login-page-right">
         <img src={login_IMG} alt="" className="login-page__front" />
         <div className="login-page__logo">
-                  <img src={logo_dark_IMG} alt="" className="" />
-
+          <img src={logo_dark_IMG} alt="" className="" />
         </div>
       </div>
     </div>

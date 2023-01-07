@@ -4,24 +4,35 @@
 }
 
 .login-page-left{
-    width: 60%;
-
+    width: 50%;
+    margin: auto;
 }
 .login-page-right{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 100Vh;
     width: 40%;
+    margin: 0 0 auto auto;
 }
 
 .login-page__front{
+    margin-left: auto;
     object-fit: cover;
-    height: 100vh;
+    height: 100%;
     width: 100%;
+}
+
+.login-page-right::before{
+    content: "";
+    width: 40%;
+    height: 100%;
+    position: absolute;
+    background-color: #152c4349;
+    top: 0;
 }
 
 .login-page__logo {
     position: absolute;
-    bottom: 0
+    bottom: 1.5rem
 }
