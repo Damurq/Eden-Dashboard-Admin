@@ -3,7 +3,7 @@ import ContainerDashboard from '../../components/containers/ContainerDashboard/C
 
 const Home = () => {
   return (
-    <ContainerDashboard section={"Home"}>
+    <ContainerDashboard section={"Dashboard"}>
         <div className="children">
             children
         </div>

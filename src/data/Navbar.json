@@ -4,43 +4,43 @@
         {
             "name": "Inicio",
             "type": "Link",
-            "icon": "database",
+            "icon": "home",
             "href": "/"
         },
         {
             "name": "Usuarios",
             "type": "Link",
-            "icon": "database",
+            "icon": "user",
             "href": "/"
         },
         {
             "name": "Eventos y Actividades",
             "type": "Link",
-            "icon": "education",
+            "icon": "calendar",
             "href": "/Eventos"
         },
         {
             "name": "Club",
             "type": "Link",
-            "icon": "work",
+            "icon": "dice",
             "href": "/Torneos"
         },
         {
             "name": "Bolas criollas",
             "type": "Link",
-            "icon": "frontend",
+            "icon": "ball",
             "href": "/Sobre-nosotros"
         },
         {
             "name": "Dominó",
             "type": "Link",
-            "icon": "frontend",
+            "icon": "domino",
             "href": "/Sobre-nosotros"
         },
         {
             "name": "Jugadores",
             "type": "Link",
-            "icon": "frontend",
+            "icon": "player",
             "href": "/Sobre-nosotros"
         }
     ]
