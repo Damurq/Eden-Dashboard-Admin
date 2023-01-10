@@ -1,4 +1,4 @@
-.login-form {
+.login-container-form {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -6,30 +6,10 @@
     margin: 1.5rem auto;
     background-color: #FFFFFF;
     border-radius: 0.5rem;
-    width: 60%;
-}
-
-.login-form__description-text--start {
-    margin-top: 2rem;
-    font-size: 1.5rem;
-    font-weight: 200;
-}
-
-.login-form-container-image{
-    width: 50%;
-    margin: auto;
-}
-
-.login-form-container-image img{
-    width: 100%;
-}
-
-.login-form__description-text{
     width: 80%;
-    text-align: center;
 }
 
-.contact-form{
+.login-form{
     width: 60%;
     display: flex;
     flex-direction: column;
@@ -41,13 +21,13 @@
     margin-bottom: 2.5rem;
 }
 
-.contact-inputs {
+.login-inputs {
     width: 100%;
     margin: 1rem 0;
 
 }
 
-.contact__input {
+.login__input {
     width: 100%;
     font-family: "Poppins", sans-serif;
     font-size: 1rem;
@@ -58,11 +38,11 @@
     padding: 1rem .5rem;
 }
 
-.contact__input:focus{
+.login__input:focus{
     border: 1px solid #48CBC5;
 }
 
- .contact__label {
+ .login__label {
     position: absolute;
     left: 0;
     padding: 1rem;
@@ -72,22 +52,20 @@
     transition: 0.5s;
 }
 
-.contact-inputs .contact__input:valid ~ .contact__label ,
-.contact-inputs .contact__input:focus ~ .contact__label{
-    transform: translateX(10px) translateY(-1.05rem);
+.login-inputs .login__input:valid ~ .login__label ,
+.login-inputs .login__input:focus ~ .login__label{
+    transform: translateX(10px) translateY(-.85rem);
     font-size: .75rem;
     padding: .45rem;
+    padding-top: .15rem;
+    padding-bottom: .15rem;
     background-color: #48CBC5;
     font-weight: bold;
     color: #FFFFFF;
     border-radius: 5px;
 }
 
-
-
-
-
-.button--contact {
+.button__login {
     background-color: #48CBC5;
     cursor: pointer;
     border-width: 0;
@@ -101,7 +79,6 @@
     font-weight: bold;
     font-size: 1.25rem;
     color: #FFFFFF;
-    margin-bottom: 2rem;
 }
 
 .error {
@@ -110,13 +87,3 @@
     font-size: 0.813rem;
     margin-bottom: 1rem;
 }
-
-.container-button--contact {
-    width: 100%;
-}
-
-.container-button--contact {
-    display: flex;
-    justify-content: center;
-}
-

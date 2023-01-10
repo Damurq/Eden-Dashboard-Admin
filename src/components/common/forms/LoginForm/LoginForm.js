@@ -1,94 +1,77 @@
-import React from 'react'
-import { Formik } from 'formik';
-import { AiOutlineSend } from 'react-icons/ai'
-import logo_light_IMG from '../../../../assets/images/logo_light_IMG.png'
+import React from "react"
+import { useFormik } from "formik";
 
+import LoginFormFooter from "../../../specific/LoginFormFooter/LoginFormFooter"
+import LoginFormHeader from "../../../specific/LoginFormHeader/LoginFormHeader"
 // Style
-import './LoginForm.css'
+import "./LoginForm.css"
+
+// const validate = 
 
 const LoginForm = () => {
 
+    const formik = useFormik({
+        initialValues: { user: "", password: "" },
+        validate: values => {
+            const errors = {};
+            if (!values.user) {
+                errors.user = "Requerido"
+            } else if (
+                !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.user)
+            ) {
+                errors.user = "Email invalido"
+            }
+            if (!values.password) {
+                errors.password = "Requerido"
+            }
+
+            return errors;
+        },
+        onSubmit: values => {
+            alert(JSON.stringify(values, null, 2));
+        },
+    });
+
     return (
-        <div className="login-form">
-            <p className="login-form__description-text--start">Bienvenido a</p>
-            <div className="login-form-container-image">
-                <img src={logo_light_IMG} alt="" className="" />
-            </div>
-            <p className="login-form__description-text">Ingresa tu usuario y contraseña para entrar a tu perfil</p>
-            <Formik
-                initialValues={{ password: '', project: '', user: '' }}
-                validate={values => {
-                    const errors = {};
-                    if (!values.password) {
-                        errors.password = 'Requerido'
-                    } else if (
-                        !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.password)
-                    ) {
-                        errors.password = 'Email invalido'
-                    }
-                    if (!values.project) {
-                        errors.project = 'Requerido'
-                    }
-                    if (!values.user) {
-                        errors.user = 'Requerido'
-                    }
+        <div className="login-container-form">
+            <LoginFormHeader />
+            <form onSubmit={formik.handleSubmit} className="login-form">
+                <div className="login-inputs">
+                    <div className="input-box">
+                        <input
+                            id="user"
+                            name="user"
+                            required
+                            type="text"
+                            onChange={formik.handleChange}
+                            value={formik.values.user}
+                            className="login__input" />
+                        <label htmlFor="user" className="login__label">Usuario</label>
 
-                    return errors;
-                }}
-                onSubmit={(values, { setSubmitting }) => {
-                    alert("Enviado")
-                }}
-            >
-                {({
-                    values,
-                    errors,
-                    touched,
-                    handleChange,
-                    handleBlur,
-                    handleSubmit,
-                    isSubmitting,
-                    /* and other goodies */
-                }) => (
-                    <form onSubmit={handleSubmit} className="contact-form">
-                        <div className="contact-inputs grid">
-                            <div className="input-box">
-                                <input
-                                    required
-                                    onChange={handleChange}
-                                    onBlur={handleBlur}
-                                    value={values.user}
-                                    type="text"
-                                    className="contact__input" id='name' />
-                                <label htmlFor="name" className="contact__label">Usuario</label>
-                                <p className="error">
-                                    {errors.user && touched.user && errors.user}
-                                </p>
-                            </div>
-                            <div className="input-box">
-                                <input
-                                    id="email"
-                                    onChange={handleChange}
-                                    onBlur={handleBlur}
-                                    value={values.password}
-                                    type="password"
-                                    required
-                                    className="contact__input" />
-                                <label htmlFor="email" className="contact__label">Contraseña</label>
-                                <p className="error">
-                                    {errors.password && touched.password && errors.password}
-                                </p>
-                            </div>
-                            <div className='container-button--contact'>
-                                <button type="submit" className='button button--flex button--contact' disabled={isSubmitting}>
-                                    Enviar mensaje
-                                    <AiOutlineSend className="uil button__icon" />
-                                </button>
-                            </div>
-                        </div>
-
-                    </form>
-                )}
-            </Formik>
+                        <p className="error">
+                            {formik.errors.user && formik.touched.user && formik.errors.user}
+                        </p>
+                    </div>
+                    <div className="input-box">
+                        <input
+                            id="password"
+                            name="password"
+                            type="password"
+                            onChange={formik.handleChange}
+                            value={formik.values.password}
+                            required
+                            className="login__input" />
+                        <label htmlFor="password" className="login__label">Contraseña</label>
+                        <p className="error">
+                            {formik.errors.password && formik.touched.password && formik.errors.password}
+                        </p>
+                    </div>
+                        <button type="submit" className="button__login" disabled={formik.isSubmitting}>
+                            Ingresar
+                        </button>
+                </div>
+            </form>
+            <LoginFormFooter />
         </div>)
 
 }

@@ -1,0 +1,18 @@
+.button--light{
+    background-color: #48CBC5;
+    color: #FFFFFF;
+    cursor: pointer;
+    border-width: 0;
+    width: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    padding: 1rem 0;
+    border-radius: 10px;
+    gap: 15px;
+}
+
+.button--big{
+    font-weight: bold;
+    font-size: 1.25rem;
+}
