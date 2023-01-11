@@ -1,5 +1,6 @@
 import React from "react"
 import { useFormik } from "formik";
+import { useHistory }    from "react-router-dom"
 
 import LoginFormFooter from "../../../specific/LoginFormFooter/LoginFormFooter"
 import LoginFormHeader from "../../../specific/LoginFormHeader/LoginFormHeader"
@@ -9,6 +10,7 @@ import "./LoginForm.css"
 // const validate = 
 
 const LoginForm = () => {
+    const history = useHistory();
 
     const formik = useFormik({
         initialValues: { user: "", password: "" },
@@ -28,7 +30,8 @@ const LoginForm = () => {
             return errors;
         },
         onSubmit: values => {
-            alert(JSON.stringify(values, null, 2));
+            alert("Bienvenido");
+            history.push("/")
         },
     });
 

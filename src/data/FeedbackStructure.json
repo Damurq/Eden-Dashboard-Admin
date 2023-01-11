@@ -1,0 +1,13 @@
+{
+    "id":"id",
+    "title":"name",
+    "subtitle":{
+        "type":"date",
+        "info":""
+    },
+    "description":"",
+    "side":{
+        "type":"",
+        "info":""
+    }
+}

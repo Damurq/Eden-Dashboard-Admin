@@ -1,0 +1,36 @@
+.event-container, .calendar-container {
+    width: 50%;
+    align-self: baseline;
+}
+
+.event-list {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.10);
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 15px;
+    gap: 1rem;
+    max-height: 220px;
+    overflow-y: auto;
+}
+
+
+@media screen and (max-width: 680px) {
+    .event-container {
+        margin-top: 2rem;
+    }
+
+    .event-container, .calendar-container {
+        width: 80%;
+    }
+
+    .event-container h2 {
+        text-align: center;
+    }
+
+    .event-list {
+        margin: 0 auto;
+    }
+}
