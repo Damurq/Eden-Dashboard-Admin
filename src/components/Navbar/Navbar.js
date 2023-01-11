@@ -30,7 +30,8 @@ const Navbar = ({ data }) => {
                         <li key={"nav-li-" + index}>
                             <a href={section.href}>
                                 <IconsComponent icon={section.icon} className="icon"/>
-                                <span className="title">{section.name}</span>                            </a>
+                                <span className="title">{section.name}</span>                            
+                            </a>
                         </li>)
                 })}
             </ul>
